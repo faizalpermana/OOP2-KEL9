@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Daftar Pegawai</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Daftar Pegawai</h1>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAMA</th>
+                    <th>JABATAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="mhs : ${daftarMahasiswa}">
+                    <td th:text="${mhs.id}"></td>
+                    <td th:text="${mhs.nama}"></td>
+                    <td th:text="${mhs.jabatan}"></td>
+                    <td>
+                    <a th:href="@{/edit(
+                    id=${mhs.id})}"> 
+                    Ubah
+                    </a>
+                    </td>
+                    <td>
+                    <a th:href="@{/hapus(id=${mhs.id})}">
+                    hapus
+                    </a>    
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                    <a href="/tambah-data"> Tambah</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

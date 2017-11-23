@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Formulir Tambah Data</title>
+</head>
+<body>
+<h1>Formulir Tambah Data</h1>
+<form th:object="${mhs}"
+	th:action="@{/tambah-data}"
+	method="POST">
+	<table>
+		<tr>
+			<td>Id</td>
+			<td><input type="text" th:field="*{id}" /></td>
+		</tr>
+		<tr>
+			<td>Nama</td>
+			<td><input type="text" th:field="*{nama}" /></td>
+		</tr>
+		<tr>
+			<td>Jabatan</td>
+			<td><input type="text" th:field="*{jabatan}"/></td>
+		</tr>
+	</table>	
+		<button type="submit">Simpan</button>
+	</form>
+</body>
+</html>
